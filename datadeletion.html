@@ -3,82 +3,412 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solicitud de Eliminación de Datos - SocialFlow</title>
+    <title>Eliminación de Datos - SocialFlow Argentina</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
         }
-        h1, h2 {
-            color: #8A2BE2;
-        }
-        .container {
-            border: 1px solid #e1e1e1;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .instructions {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
-        .footer {
-            margin-top: 30px;
+        
+        .header {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 40px 0;
             text-align: center;
-            font-size: 0.8em;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #e74c3c;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e8e8e8;
+            font-size: 1.8em;
+        }
+        
+        h3 {
+            color: #c0392b;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .step-box {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #e74c3c;
+            counter-increment: step;
+            position: relative;
+        }
+        
+        .step-box::before {
+            content: counter(step);
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #e74c3c;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .steps-container {
+            counter-reset: step;
+            margin-left: 30px;
+        }
+        
+        .warning-box {
+            background: #fef5e7;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #f39c12;
+        }
+        
+        .info-box {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        .data-table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .data-table th {
+            background: #e74c3c;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .data-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .data-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .email-template {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            border: 2px dashed #999;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            margin: 10px 0;
+        }
+        
+        .button:hover {
+            background: #c0392b;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            padding: 30px;
+            text-align: center;
+            background: #f8f9fa;
+            border-radius: 10px;
             color: #666;
+        }
+        
+        .faq {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        .faq h4 {
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+        
+        ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 25px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            .steps-container {
+                margin-left: 20px;
+            }
+            
+            .step-box::before {
+                left: -15px;
+                width: 30px;
+                height: 30px;
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="header">
         <h1>Solicitud de Eliminación de Datos</h1>
-        
-        <div class="instructions">
-            <h2>Cómo solicitar la eliminación de tus datos</h2>
-            <p>De acuerdo con las leyes de protección de datos, tienes derecho a solicitar la eliminación de tus datos personales de nuestra plataforma.</p>
-            
-            <h3>Para solicitar la eliminación de tus datos:</h3>
-            <ol>
-                <li>Envía un correo electrónico a <a href="mailto:socialargentina@outlook.com">socialargentina@outlook.com</a></li>
-                <li>Incluye "Solicitud de Eliminación de Datos" en el asunto del correo</li>
-                <li>Proporciona tu nombre de usuario y correo electrónico asociado a tu cuenta</li>
-                <li>Especifica si deseas eliminar solo ciertos datos o tu cuenta completa</li>
-            </ol>
-            
-            <h3>Tiempo de procesamiento:</h3>
-            <p>Procesaremos tu solicitud dentro de los 30 días siguientes a su recepción. Te enviaremos una confirmación cuando el proceso se haya completado.</p>
-            
-            <h3>Información importante:</h3>
-            <p>Al eliminar tu cuenta, se eliminarán todos los datos asociados, incluyendo:</p>
-            <ul>
-                <li>Información de perfil</li>
-                <li>Historial de publicaciones</li>
-                <li>Conexiones a redes sociales</li>
-                <li>Configuraciones y preferencias</li>
-            </ul>
-            <p><strong>Nota:</strong> Es posible que debamos retener cierta información por razones legales o de seguridad, como registros de transacciones, por el tiempo requerido por la ley.</p>
-        </div>
-        
-        <h2>Preguntas frecuentes</h2>
-        <p><strong>¿Puedo recuperar mi cuenta después de eliminarla?</strong><br>
-        No, una vez que eliminamos tu cuenta y datos, no es posible recuperarlos.</p>
-        
-        <p><strong>¿Qué pasa con mis publicaciones en redes sociales?</strong><br>
-        La eliminación de tu cuenta en SocialFlow no afecta las publicaciones ya realizadas en tus redes sociales. Deberás eliminarlas directamente desde cada plataforma.</p>
-        
-        <p><strong>¿Se eliminan mis datos de copias de seguridad?</strong><br>
-        Sí, tus datos serán eliminados también de nuestras copias de seguridad en un plazo máximo de 90 días.</p>
+        <p>Tu derecho a ser olvidado - Proceso simple y transparente</p>
     </div>
     
-    <div class="footer">
-        <p>© 2023 SocialFlow - Todos los derechos reservados</p>
+    <div class="container">
+        <div class="info-box">
+            <h3>Tu derecho a la eliminación de datos</h3>
+            <p>De acuerdo con las leyes de protección de datos personales de Argentina y estándares internacionales, tienes el derecho absoluto de solicitar la eliminación completa de tu información personal de nuestra plataforma.</p>
+        </div>
+        
+        <h2>Proceso de Eliminación - Paso a Paso</h2>
+        
+        <div class="steps-container">
+            <div class="step-box">
+                <h4>Prepara tu solicitud</h4>
+                <p>Ten a mano tu nombre de usuario y el email asociado a tu cuenta de SocialFlow.</p>
+            </div>
+            
+            <div class="step-box">
+                <h4>Envía el email</h4>
+                <p>Envía tu solicitud a: <strong>socialargentina@outlook.com</strong></p>
+                <p>Asunto: <strong>"Solicitud de Eliminación de Datos - [Tu Usuario]"</strong></p>
+            </div>
+            
+            <div class="step-box">
+                <h4>Confirmación de recepción</h4>
+                <p>Recibirás un email de confirmación en 24-48 horas hábiles.</p>
+            </div>
+            
+            <div class="step-box">
+                <h4>Procesamiento</h4>
+                <p>Procesaremos tu solicitud en un máximo de 30 días calendario.</p>
+            </div>
+            
+            <div class="step-box">
+                <h4>Confirmación final</h4>
+                <p>Te enviaremos un email confirmando la eliminación completa de tus datos.</p>
+            </div>
+        </div>
+        
+        <h2>¿Qué Datos se Eliminarán?</h2>
+        
+        <table class="data-table">
+            <tr>
+                <th>Categoría</th>
+                <th>Datos Específicos</th>
+            </tr>
+            <tr>
+                <td><strong>Información Personal</strong></td>
+                <td>Nombre, email, foto de perfil, ID de Google</td>
+            </tr>
+            <tr>
+                <td><strong>Configuración de Perfil</strong></td>
+                <td>Hashtags personalizados, links de tienda, contexto de perfil</td>
+            </tr>
+            <tr>
+                <td><strong>Tokens de Redes Sociales</strong></td>
+                <td>Todos los tokens de acceso de LinkedIn, Facebook, Instagram y TikTok</td>
+            </tr>
+            <tr>
+                <td><strong>Historial de Publicaciones</strong></td>
+                <td>Registro de todas las publicaciones realizadas, fechas y plataformas</td>
+            </tr>
+            <tr>
+                <td><strong>Publicaciones Programadas</strong></td>
+                <td>Todas las publicaciones pendientes serán canceladas y eliminadas</td>
+            </tr>
+            <tr>
+                <td><strong>Información de Suscripción</strong></td>
+                <td>Plan actual, historial de pagos, límites de uso</td>
+            </tr>
+            <tr>
+                <td><strong>Logs de Actividad</strong></td>
+                <td>Registros de acceso, IPs, acciones realizadas</td>
+            </tr>
+            <tr>
+                <td><strong>Datos en Caché</strong></td>
+                <td>Cualquier información temporal almacenada</td>
+            </tr>
+        </table>
+        
+        <h2>Plantilla de Email para tu Solicitud</h2>
+        
+        <div class="email-template">Para: socialargentina@outlook.com
+Asunto: Solicitud de Eliminación de Datos - [TU_USUARIO]
+
+Estimado equipo de SocialFlow Argentina:
+
+Por medio de la presente, solicito la eliminación completa de mi cuenta y todos los datos asociados de acuerdo con mi derecho establecido en las leyes de protección de datos.
+
+Información de mi cuenta:
+- Nombre de usuario: [TU_USUARIO]
+- Email registrado: [TU_EMAIL]
+- Fecha aproximada de registro: [OPCIONAL]
+
+Tipo de eliminación solicitada:
+[ ] Eliminación completa de cuenta y todos los datos
+[ ] Eliminación parcial (especificar): _______________
+
+Confirmo que entiendo que:
+- Esta acción es irreversible
+- Perderé acceso a todos mis datos y configuraciones
+- Las publicaciones ya realizadas en redes sociales no serán eliminadas automáticamente
+
+Atentamente,
+[TU_NOMBRE]
+[FECHA]</div>
+        
+        <a href="mailto:socialargentina@outlook.com?subject=Solicitud%20de%20Eliminación%20de%20Datos" class="button">
+            Enviar Email de Solicitud
+        </a>
+        
+        <h2>Preguntas Frecuentes</h2>
+        
+        <div class="faq">
+            <h4>¿Cuánto tiempo toma el proceso completo?</h4>
+            <p>El proceso completo toma un máximo de 30 días calendario desde la recepción de tu solicitud. Sin embargo, normalmente lo completamos en 7-10 días hábiles.</p>
+        </div>
+        
+        <div class="faq">
+            <h4>¿Puedo recuperar mi cuenta después de eliminarla?</h4>
+            <p>No. La eliminación es permanente e irreversible. Si deseas usar SocialFlow nuevamente, deberás crear una cuenta nueva.</p>
+        </div>
+        
+        <div class="faq">
+            <h4>¿Qué pasa con mis publicaciones en redes sociales?</h4>
+            <p>Las publicaciones ya realizadas permanecerán en tus redes sociales. Solo eliminamos los registros de nuestra base de datos. Para eliminar publicaciones de tus redes, debes hacerlo directamente en cada plataforma.</p>
+        </div>
+        
+        <div class="faq">
+            <h4>¿Se eliminan también las copias de seguridad?</h4>
+            <p>Sí. Tus datos serán eliminados de todas las copias de seguridad en un plazo máximo de 90 días. Las copias de seguridad se sobrescriben automáticamente en ese período.</p>
+        </div>
+        
+        <div class="faq">
+            <h4>¿Qué datos pueden conservarse por razones legales?</h4>
+            <p>Solo conservamos registros mínimos requeridos por ley, como:</p>
+            <ul>
+                <li>Registros de transacciones financieras (sin datos personales identificables)</li>
+                <li>Logs de eliminación para cumplimiento regulatorio</li>
+                <li>Comunicaciones relacionadas con disputas legales (si las hubiera)</li>
+            </ul>
+        </div>
+        
+        <div class="faq">
+            <h4>¿Puedo solicitar una copia de mis datos antes de eliminarlos?</h4>
+            <p>¡Por supuesto! Puedes solicitar una copia completa de tus datos antes de proceder con la eliminación. Incluye esto en tu email de solicitud.</p>
+        </div>
+        
+        <div class="warning-box">
+            <h3>⚠️ Importante antes de solicitar la eliminación</h3>
+            <ul>
+                <li>Cancela cualquier suscripción activa para evitar cargos futuros</li>
+                <li>Descarga cualquier contenido que quieras conservar</li>
+                <li>Asegúrate de tener acceso directo a tus redes sociales</li>
+                <li>Las publicaciones programadas pendientes se cancelarán</li>
+            </ul>
+        </div>
+        
+        <h2>Alternativas a la Eliminación Total</h2>
+        
+        <div class="info-box">
+            <h3>Si no estás seguro de eliminar todo, considera estas opciones:</h3>
+            <ul>
+                <li><strong>Desactivar temporalmente:</strong> Pausa tu cuenta sin eliminar datos</li>
+                <li><strong>Cambiar a plan FREE:</strong> Mantén tu cuenta con funcionalidad limitada</li>
+                <li><strong>Desconectar redes sociales:</strong> Revoca accesos sin eliminar tu cuenta</li>
+                <li><strong>Eliminar datos específicos:</strong> Solicita eliminación parcial</li>
+            </ul>
+            <p>Contáctanos si prefieres alguna de estas alternativas.</p>
+        </div>
+        
+        <h2>Base Legal</h2>
+        <p>Tu derecho a la eliminación de datos está respaldado por:</p>
+        <ul>
+            <li>Ley 25.326 de Protección de Datos Personales de Argentina</li>
+            <li>Disposición 10/2008 de la DNPDP</li>
+            <li>Principios internacionales de protección de datos (GDPR compatible)</li>
+        </ul>
+        
+        <h2>Contacto de Soporte</h2>
+        <div class="info-box">
+            <p><strong>Email:</strong> socialargentina@outlook.com</p>
+            <p><strong>Horario:</strong> Lunes a Viernes, 9:00 - 18:00 (Hora Argentina)</p>
+            <p><strong>Tiempo de respuesta:</strong> 24-48 horas hábiles</p>
+        </div>
+        
+        <div class="footer">
+            <p><strong>SocialFlow Argentina</strong></p>
+            <p>© 2025 - Todos los derechos reservados</p>
+            <p>Respetamos tu privacidad y tus derechos</p>
+        </div>
     </div>
 </body>
 </html>
