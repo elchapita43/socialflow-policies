@@ -3,85 +3,374 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidad - SocialFlow</title>
+    <title>Política de Privacidad - SocialFlow Argentina</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
         }
-        h1, h2 {
-            color: #8A2BE2;
-        }
-        .container {
-            border: 1px solid #e1e1e1;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .footer {
-            margin-top: 30px;
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 0;
             text-align: center;
-            font-size: 0.8em;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e8e8e8;
+            font-size: 1.8em;
+        }
+        
+        h3 {
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .info-box {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        .warning-box {
+            background: #fef5e7;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #f39c12;
+        }
+        
+        .security-box {
+            background: #e8f8f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #27ae60;
+        }
+        
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            padding: 30px;
+            text-align: center;
+            background: #f8f9fa;
+            border-radius: 10px;
             color: #666;
+        }
+        
+        a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        
+        .date-update {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 25px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Política de Privacidad de SocialFlow</h1>
-        <p>Última actualización: 10 de abril de 2025</p>
-        
-        <h2>1. Información que recopilamos</h2>
-        <p>En SocialFlow, recopilamos la siguiente información:</p>
-        <ul>
-            <li>Información de acceso a redes sociales (tokens de acceso) para proporcionar funcionalidad de publicación.</li>
-            <li>Información del perfil proporcionada durante el registro, como nombre de usuario y correo electrónico.</li>
-            <li>Imágenes y texto que subes para crear publicaciones en redes sociales.</li>
-            <li>Datos de uso de la aplicación para mejorar nuestros servicios.</li>
-        </ul>
-        
-        <h2>2. Cómo utilizamos tu información</h2>
-        <p>Utilizamos la información recopilada para:</p>
-        <ul>
-            <li>Proporcionar la funcionalidad principal de nuestra aplicación: programar y publicar contenido en redes sociales.</li>
-            <li>Mejorar y personalizar tu experiencia con la aplicación.</li>
-            <li>Enviar notificaciones relacionadas con tus publicaciones o cuenta.</li>
-            <li>Cumplir con requisitos legales cuando sea necesario.</li>
-        </ul>
-        
-        <h2>3. Compartir información</h2>
-        <p>No vendemos tu información personal a terceros. Compartimos información con:</p>
-        <ul>
-            <li>Plataformas de redes sociales (Facebook, Instagram, LinkedIn, TikTok) para permitir publicaciones en tu nombre.</li>
-            <li>Proveedores de servicios que nos ayudan a operar la aplicación.</li>
-            <li>Cuando sea requerido por ley o para proteger nuestros derechos legales.</li>
-        </ul>
-        
-        <h2>4. Tus derechos</h2>
-        <p>Tienes derecho a:</p>
-        <ul>
-            <li>Acceder a la información personal que tenemos sobre ti.</li>
-            <li>Corregir información inexacta.</li>
-            <li>Solicitar la eliminación de tus datos.</li>
-            <li>Revocar permisos de conexión a redes sociales en cualquier momento.</li>
-        </ul>
-        
-        <h2>5. Seguridad</h2>
-        <p>Implementamos medidas de seguridad técnicas y organizativas para proteger tu información personal.</p>
-        
-        <h2>6. Cambios a esta política</h2>
-        <p>Podemos actualizar esta política de privacidad periódicamente. Te notificaremos sobre cambios significativos.</p>
-        
-        <h2>7. Contacto</h2>
-        <p>Si tienes preguntas sobre esta política o deseas ejercer tus derechos, contáctanos en <a href="mailto:socialargentina@outlook.com">socialargentina@outlook.com</a>.</p>
+    <div class="header">
+        <h1>Política de Privacidad</h1>
+        <p>SocialFlow Argentina - Transparencia y seguridad en el manejo de tus datos</p>
     </div>
     
-    <div class="footer">
-        <p>© 2023 SocialFlow - Todos los derechos reservados</p>
+    <div class="container">
+        <p class="date-update">Última actualización: <?php echo date("d \d\e F \d\e Y"); ?></p>
+        
+        <div class="info-box">
+            <p><strong>Compromiso con tu privacidad:</strong> En SocialFlow Argentina nos tomamos muy en serio la protección de tus datos personales. Esta política explica de manera clara y transparente qué información recopilamos, cómo la usamos y cómo la protegemos.</p>
+        </div>
+        
+        <h2>1. Información que Recopilamos</h2>
+        
+        <h3>1.1 Información de Registro (Google OAuth)</h3>
+        <p>Cuando inicias sesión con Google, recibimos:</p>
+        <ul>
+            <li><strong>Nombre:</strong> El nombre asociado a tu cuenta de Google</li>
+            <li><strong>Email:</strong> Tu dirección de correo electrónico</li>
+            <li><strong>ID de Google:</strong> Un identificador único para tu cuenta</li>
+            <li><strong>Foto de perfil:</strong> Tu imagen de perfil de Google (si la tienes)</li>
+        </ul>
+        
+        <h3>1.2 Información de Redes Sociales</h3>
+        <p>Cuando conectas tus redes sociales:</p>
+        <table>
+            <tr>
+                <th>Red Social</th>
+                <th>Información que Almacenamos</th>
+            </tr>
+            <tr>
+                <td>LinkedIn</td>
+                <td>Token de acceso, ID de usuario, nombre de perfil</td>
+            </tr>
+            <tr>
+                <td>Facebook</td>
+                <td>Token de acceso, ID de usuario, nombre</td>
+            </tr>
+            <tr>
+                <td>Instagram</td>
+                <td>Token de acceso, ID de cuenta business, username</td>
+            </tr>
+            <tr>
+                <td>TikTok</td>
+                <td>Token de acceso, Open ID, nickname</td>
+            </tr>
+        </table>
+        
+        <h3>1.3 Contenido y Publicaciones</h3>
+        <ul>
+            <li><strong>Imágenes:</strong> Procesadas temporalmente, optimizadas y eliminadas después de publicar</li>
+            <li><strong>Textos:</strong> Captions y descripciones generadas o editadas</li>
+            <li><strong>Hashtags personalizados:</strong> Si los configuras en tu perfil</li>
+            <li><strong>Enlaces de tienda:</strong> Si agregas links a tu negocio</li>
+            <li><strong>Contexto de perfil:</strong> Información adicional para personalizar la IA</li>
+        </ul>
+        
+        <h3>1.4 Información de Uso</h3>
+        <ul>
+            <li>Número de publicaciones realizadas</li>
+            <li>Fechas y horas de publicación</li>
+            <li>Plataformas utilizadas</li>
+            <li>Logs de acceso (IP, navegador, acciones realizadas)</li>
+            <li>Preferencias de estilo y configuración</li>
+        </ul>
+        
+        <h2>2. Cómo Usamos tu Información</h2>
+        
+        <div class="info-box">
+            <h3>Usos principales:</h3>
+            <ul>
+                <li><strong>Funcionalidad del servicio:</strong> Publicar en tus redes sociales según lo programado</li>
+                <li><strong>Generación de contenido:</strong> Usar IA para crear captions personalizados</li>
+                <li><strong>Mejora del servicio:</strong> Analizar patrones de uso para optimizar la plataforma</li>
+                <li><strong>Soporte:</strong> Ayudarte cuando tengas problemas o consultas</li>
+                <li><strong>Seguridad:</strong> Detectar y prevenir uso fraudulento o abusivo</li>
+            </ul>
+        </div>
+        
+        <h2>3. Base de Datos y Almacenamiento</h2>
+        
+        <div class="security-box">
+            <h3>Detalles técnicos de almacenamiento:</h3>
+            <ul>
+                <li><strong>Base de datos:</strong> SQLite con respaldos regulares</li>
+                <li><strong>Ubicación:</strong> Servidores de Google Cloud Platform</li>
+                <li><strong>Encriptación:</strong> Tokens y datos sensibles encriptados</li>
+                <li><strong>Sesiones:</strong> Almacenadas en el sistema de archivos o Redis</li>
+                <li><strong>Retención:</strong> Datos eliminados 90 días después de cerrar cuenta</li>
+            </ul>
+        </div>
+        
+        <h2>4. Compartición de Información</h2>
+        
+        <h3>4.1 Con Terceros Necesarios</h3>
+        <ul>
+            <li><strong>OpenAI:</strong> Para generar contenido con IA (solo texto e imágenes, sin datos personales)</li>
+            <li><strong>Mercado Pago:</strong> Para procesar pagos (solo información necesaria para la transacción)</li>
+            <li><strong>Google Analytics:</strong> Para análisis de uso agregado y anónimo</li>
+            <li><strong>APIs de Redes Sociales:</strong> Solo la información necesaria para publicar</li>
+        </ul>
+        
+        <h3>4.2 Nunca Compartimos</h3>
+        <ul>
+            <li>Tu información personal con empresas de marketing</li>
+            <li>Tus datos con otros usuarios</li>
+            <li>Información identificable sin tu consentimiento explícito</li>
+        </ul>
+        
+        <h2>5. Tus Derechos</h2>
+        
+        <div class="info-box">
+            <h3>Tienes derecho a:</h3>
+            <ul>
+                <li><strong>Acceder:</strong> Solicitar una copia de todos tus datos</li>
+                <li><strong>Rectificar:</strong> Corregir información incorrecta o desactualizada</li>
+                <li><strong>Eliminar:</strong> Solicitar la eliminación completa de tu cuenta y datos</li>
+                <li><strong>Portabilidad:</strong> Recibir tus datos en formato estructurado</li>
+                <li><strong>Oposición:</strong> Oponerte a ciertos usos de tus datos</li>
+                <li><strong>Limitación:</strong> Restringir el procesamiento en ciertos casos</li>
+            </ul>
+        </div>
+        
+        <h2>6. Seguridad</h2>
+        
+        <div class="security-box">
+            <h3>Medidas de seguridad implementadas:</h3>
+            <ul>
+                <li><strong>Autenticación:</strong> OAuth 2.0 con Google (no almacenamos contraseñas)</li>
+                <li><strong>Tokens:</strong> Almacenados de forma segura y con expiración</li>
+                <li><strong>HTTPS:</strong> Todas las comunicaciones están encriptadas</li>
+                <li><strong>CSRF Protection:</strong> Protección contra ataques cross-site</li>
+                <li><strong>Rate Limiting:</strong> Límites para prevenir abuso</li>
+                <li><strong>Logs de seguridad:</strong> Monitoreo de actividades sospechosas</li>
+                <li><strong>Validación:</strong> Sanitización de todas las entradas de usuario</li>
+            </ul>
+        </div>
+        
+        <h2>7. Cookies y Tecnologías Similares</h2>
+        
+        <table>
+            <tr>
+                <th>Tipo de Cookie</th>
+                <th>Propósito</th>
+                <th>Duración</th>
+            </tr>
+            <tr>
+                <td>Sesión</td>
+                <td>Mantener tu sesión activa</td>
+                <td>5 horas o hasta cerrar sesión</td>
+            </tr>
+            <tr>
+                <td>CSRF Token</td>
+                <td>Seguridad contra ataques</td>
+                <td>Por sesión</td>
+            </tr>
+            <tr>
+                <td>Preferencias</td>
+                <td>Recordar configuraciones</td>
+                <td>1 año</td>
+            </tr>
+            <tr>
+                <td>Analytics</td>
+                <td>Google Analytics (anónimo)</td>
+                <td>2 años</td>
+            </tr>
+        </table>
+        
+        <h2>8. Transferencias Internacionales</h2>
+        
+        <div class="warning-box">
+            <p><strong>Importante:</strong> Tus datos pueden ser procesados en servidores ubicados en Estados Unidos (Google Cloud, OpenAI). Estas transferencias se realizan con las garantías adecuadas según la normativa de protección de datos.</p>
+        </div>
+        
+        <h2>9. Menores de Edad</h2>
+        <p>SocialFlow Argentina no está dirigido a menores de 18 años. No recopilamos conscientemente información de menores. Si eres padre/madre y crees que tu hijo/a ha proporcionado información, contáctanos inmediatamente.</p>
+        
+        <h2>10. Cambios en la Política</h2>
+        <p>Podemos actualizar esta política ocasionalmente. Te notificaremos sobre cambios significativos por email o mediante un aviso en la plataforma. La fecha de "última actualización" siempre reflejará la versión más reciente.</p>
+        
+        <h2>11. Contacto para Privacidad</h2>
+        
+        <div class="info-box">
+            <h3>Para ejercer tus derechos o consultas sobre privacidad:</h3>
+            <p><strong>Email:</strong> <a href="mailto:socialargentina@outlook.com">socialargentina@outlook.com</a></p>
+            <p><strong>Asunto sugerido:</strong> "Consulta de Privacidad - [Tu nombre de usuario]"</p>
+            <p><strong>Tiempo de respuesta:</strong> 24-72 horas hábiles</p>
+        </div>
+        
+        <h2>12. Autoridad de Control</h2>
+        <p>Si no estás satisfecho con nuestra respuesta, puedes presentar una reclamación ante la Agencia de Acceso a la Información Pública de Argentina:</p>
+        <ul>
+            <li>Web: <a href="https://www.argentina.gob.ar/aaip" target="_blank">www.argentina.gob.ar/aaip</a></li>
+            <li>Dirección: Av. Pte. Gral. Julio A. Roca 710, Piso 3, CABA</li>
+        </ul>
+        
+        <div class="footer">
+            <p><strong>SocialFlow Argentina</strong></p>
+            <p>© 2025 - Todos los derechos reservados</p>
+            <p>Tu privacidad es nuestra prioridad</p>
+        </div>
     </div>
 </body>
 </html>
